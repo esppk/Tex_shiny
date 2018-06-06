@@ -34,7 +34,7 @@ server <- function(input, output){
                          DT::dataTableOutput('result') 
                          
                 ), 
-                tabPanel("sentiment", plotOutput("sentiplot"))
+                tabPanel("sentiment", plotOutput("sentiplot",height = "600px"))
             )})
     })
     
@@ -56,8 +56,8 @@ server <- function(input, output){
     
     output$sentiplot <- renderPlot({
         
-        withProgress(
-            input$text %>% tibble(txt = .) %>% unnest_tokens(word, txt) %>%
+        withProgress({
+           input$text %>% tibble(txt = .) %>% unnest_tokens(word, txt) %>%
                 count(word, sort = T) %>% 
                 inner_join(get_sentiments("nrc")) %>% 
                 group_by(sentiment) %>%  slice(1:20) %>% 
@@ -69,7 +69,8 @@ server <- function(input, output){
                 labs(y = "Contribution to sentiment",
                      x = NULL) +
                 coord_flip() + labs(caption = "Sentiment info come from NRC") + 
-                theme(plot.caption = element_text(face = "italic", color = "gray70")),
+                theme(plot.caption = element_text(face = "italic", color = "gray70")) 
+          },
             message = "Need some time..."
         )
         

@@ -1,0 +1,50 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+* {
+    margin: 0;
+}
+
+.navbar {
+    font-family: Lobster, sans-serif;
+    margin-bottom: 0px;
+}
+
+h2 {
+    display: block;
+    padding: 30px;
+    text-align: center;
+    background-image: url(gothic.jpg);
+    font-size: 6rem;
+    margin: 0px;
+    font-family: 'Abril Fatface', Impact, cursive;
+    color: white;
+    text-shadow: 0 2px 4px black !important;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.main_section {
+    padding-top: 10px;
+    background-image: url(puzzles.jpg);
+    min-height: 700px;
+}
+
+.content_sec {
+    padding: 3%;
+    padding-top: 1%;
+    width: 80%;
+    margin: auto;
+    background-image: linear-gradient(to bottom right, rgba(237, 237, 237, 0.6), rgba(153, 153, 153, 0.6))
+}
+
+.shiny-input-container {
+    width: 100% !important;
+}
+
+#ok {
+    background: rgb(127, 127, 231);
+    width: 80%;
+    margin-left: 10%;
+}
